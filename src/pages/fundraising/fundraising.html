@@ -1,0 +1,83 @@
+<!--
+  Generated template for the FundraisingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>勸募</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bgcontent">
+	<ion-searchbar animated="true" placeholder="輸入姓名/電話搜尋勸募資料"></ion-searchbar>
+	<ion-item-group>
+		<ion-list-header color="light">篩選條件</ion-list-header>
+	</ion-item-group>
+	<div class="setpadding">
+		募款單狀態
+		<div class="setpadding">
+			<ion-segment [(ngModel)]="filterList">
+			    <ion-segment-button value="stateOneLists">
+			        已收款
+			    </ion-segment-button>
+			    <ion-segment-button value="stateTwoLists">
+			        已結帳
+			    </ion-segment-button>
+			    <ion-segment-button value="stateThreeLists">
+			        已回報
+			    </ion-segment-button>
+			</ion-segment>
+		</div>
+	</div>
+	<div class="sperateLine"></div>
+	<ion-item-group>
+		<ion-list-header color="light">勸募列表</ion-list-header>
+		    <ion-list class="ItemSpace" *ngFor="let d of diseases; let i=index" (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" text-wrap>
+		        <ion-item>
+					<ion-label text-wrap padding-left>
+						會員:{{'{'}}曾福氣{{'}'}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 有{{'{'}}3{{'}'}}筆已收款<br>
+						電話:{{'{'}}0911168168{{'}'}} &emsp; 更新日期: 2017/12/27
+					</ion-label>
+<!-- 				    <ion-icon [@expand]="isGroupShown(i)" color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'"> -->
+					<ion-icon [@expand]="isGroupShown(i)" color="success" item-right name="arrow-dropright">
+				    </ion-icon>
+				</ion-item>
+		      	<ion-item *ngIf="isGroupShown(i)" (click)="checkFunc()">
+				    <button ion-item *ngFor="let site of sites">
+				        <!-- {{ site }} -->
+				        <ion-grid>
+				        	<ion-row>
+								<ion-col>
+									收據抬頭:{{'{'}}曾福氣{{'}'}}闔家
+								</ion-col>
+								<ion-col>
+									募款日期:{{'{'}}2017/12/21{{'}'}}
+								</ion-col>
+				        	</ion-row>
+				        	<ion-row>
+								<ion-col>
+									電話:{{'{'}}0911168168{{'}'}}
+								</ion-col>
+								<ion-col>
+									更新日期: 2017/12/27
+								</ion-col>				        		
+				        	</ion-row>
+				        </ion-grid>
+<!-- 				        收據抬頭:{{'{'}}曾福氣{{'}'}}闔家 &emsp;&emsp;&emsp; 募款日期:{{'{'}}2017/12/21{{'}'}}<br>
+						<p>電話:{{'{'}}0911168168{{'}'}}</p>
+						更新日期: 2017/12/27 -->
+				    </button>
+				</ion-item>
+		    </ion-list>
+	</ion-item-group>
+	<ion-fab right bottom>
+	   <button ion-fab mini (click)="onLoadCheckOutPage()">
+	   	<ion-icon name="md-cart"></ion-icon>
+	   </button>
+	</ion-fab>
+</ion-content>

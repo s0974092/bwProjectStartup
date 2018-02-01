@@ -1,0 +1,22 @@
+page-member {
+	button.item.item-block.item-ios {
+		margin: 0;
+		padding-left: 0;
+	}
+
+	.col {
+		padding: 0;
+	}
+
+	.item-ios.item-block:not(:last-child) .item-inner {
+	  border-bottom: 0.55px solid #c8c7cc;
+	}
+
+	ion-item.item-ios.item-block:last-child .item-inner {
+      border-bottom: none;
+	}
+
+	ion-item.item.item-block.item-ios > .item-inner {	
+      padding-right: 0px !important;
+	}
+}

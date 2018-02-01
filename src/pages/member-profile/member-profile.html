@@ -1,0 +1,96 @@
+<!--
+  Generated template for the MemberProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+  <!-- <ion-navbar> -->
+  	<ion-buttons start>
+		<button ion-button icon-only color="royal" (click)="goBack()" start>
+			<ion-icon name="arrow-back"></ion-icon>
+		</button>
+	</ion-buttons>
+    <ion-title>會員資料</ion-title>
+
+    <ion-buttons end>
+	    <button ion-button icon-only color="royal" (click)="presentPopover($event)" end>
+	      <ion-icon name="md-more"></ion-icon>
+	    </button>
+    </ion-buttons>
+  <!-- </ion-navbar> -->
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bgcontent">
+	<ion-item-group>
+		<!-- <ion-list-header [(ngModule)]="member" color="light">{{ member.memberName }} 的基本資料</ion-list-header> -->
+		<!-- <form (ngSubmit)="onEditMember(f.value)" #f="ngForm"> -->
+			<ion-list-header color="light">{{ member.name }}的基本資料</ion-list-header>
+	<!-- 		<ion-item no-lines>
+			  <ion-label stacked>姓名*</ion-label>
+			  <ion-label>{{ member.memberName }}</ion-label>
+			</ion-item> -->
+		    <ion-item no-lines>
+		      <ion-label stacked>身分證全碼*</ion-label>
+		      <ion-label class="setalignright">{{ member.idCard }}</ion-label>
+		    </ion-item>
+		    <ion-item no-lines>
+		      <ion-label stacked>身分證後四碼*</ion-label>
+		      <ion-label class="setalignright">{{ member.idCardLast4 }}</ion-label>
+		    </ion-item>
+		    <ion-item no-lines>
+		      <ion-label stacked>行動電話</ion-label>
+		      <ion-label *ngIf="!editMode" class="setalignright">{{ member.cellPhoneNumber }}</ion-label>
+		      <ion-input *ngIf="editMode" type="text" name="cellPhoneNumber" [(ngModel)]="editMember.cellPhoneNumber" required value="{{ editMember.cellPhoneNumber }}"></ion-input>
+		    </ion-item>
+		    <ion-item no-lines>
+		      <ion-label stacked>住家電話</ion-label>
+		      <ion-label *ngIf="!editMode" class="setalignright">{{ member.homeNumber }}</ion-label>
+		      <ion-input *ngIf="editMode" type="text" name="homeNumber" [(ngModel)]="editMember.homeNumber" required value="{{ editMember.homeNumber }}"></ion-input>		      
+		    </ion-item>
+		    <ion-item no-lines>
+		      <ion-label stacked>電子郵件</ion-label>
+		      <ion-label *ngIf="!editMode" class="setalignright">{{ member.email }}</ion-label>
+		      <ion-input *ngIf="editMode" type="text" name="email" [(ngModel)]="editMember.email" required value="{{ editMember.email }}"></ion-input>		      
+		    </ion-item>
+		    <ion-item  no-lines>
+		      <ion-label stacked>身份別*</ion-label>
+		      <ion-label *ngIf="!editMode" class="setalignright">{{ member.memberType }}</ion-label>
+		      <ion-select *ngIf="editMode" [(ngModel)]="editMember.memberType" name="memberType">
+		        <ion-option *ngFor="let memberType of memberTypeList" [value]="memberType">{{ memberType }}</ion-option>
+		      </ion-select>	      
+		    </ion-item>
+		    <ion-item  no-lines>
+		      <ion-label stacked>收款通知*</ion-label>
+		      <ion-label *ngIf="!editMode" class="setalignright">{{ member.notifyType }}</ion-label>
+		      <ion-select *ngIf="editMode" [(ngModel)]="editMember.notifyType" name="notifyType">
+		        <ion-option *ngFor="let notifyType of memberNotifyList" [value]="notifyType">{{ notifyType }}</ion-option>
+		      </ion-select>      
+		    </ion-item>
+		    <ion-item  no-lines>
+		      <ion-label stacked>地址</ion-label>
+		      <ion-label *ngIf="!editMode" class="setalignright">{{ member.address }}</ion-label>
+		      <ion-input *ngIf="editMode" type="text" name="address" [(ngModel)]="editMember.address" required value="{{ editMember.address }}"></ion-input>		      
+		    </ion-item>
+
+			<ion-row>  
+			 <ion-col>   
+			  <button *ngIf="editMode" ion-button no-margin block (click)="onEdit()">確定修改</button>
+			 </ion-col> 
+			 <ion-col>   
+			  <button *ngIf="editMode" ion-button no-margin block (click)="onEditMode()">取消</button>
+			 </ion-col> 
+			</ion-row>
+		<!-- </form> -->
+		</ion-item-group>
+
+		<ion-fab *ngIf="!editMode" right bottom>
+		   <button ion-fab mini (click)="onEditMode()">
+		   	<ion-icon name="md-create"></ion-icon>
+		   </button>
+		</ion-fab>
+
+</ion-content>

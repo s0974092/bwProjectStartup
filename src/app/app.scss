@@ -14,3 +14,56 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// 設置背景顏色
+  .bgcontent {
+	  background:    #efece6
+  }
+
+// 調整 ion-list-header 的高度
+  .item.item-ios.list-header.list-header-ios.item-ios-light.list-header-ios-light {
+	  min-height: 2rem !important;
+  }
+  .label.label-ios {
+  	margin-top: 5px !important; 
+  	margin-bottom: 5px !important;
+  	margin-left: 0px !important;
+  	font-size: small !important;
+  }
+  .list-header {
+    padding-left: 10px !important;
+  }
+
+// 調整 searchbar 邊框高度與輸入框高度
+  .searchbar-ios {
+    min-height: 35px !important;
+  }
+  .searchbar-input {
+    height: 28px !important;
+  }
+  .searchbar-search-icon {
+    top: 7px !important;
+  }
+
+// 留白空間處的顏色
+  div.sperateLine {
+	  border: 5px solid #a9a9aa;
+  }
+
+// 設置置底的按鈕
+  .setbuttom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+  }
+
+// 設置content margin-bottom留白空間處
+  .setcontentbottom {
+    margin-bottom: 60px; 
+  }
+// 設置文字靠右  
+  .setalignright {
+    text-align: right;
+  }

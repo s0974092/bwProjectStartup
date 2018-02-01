@@ -1,0 +1,94 @@
+<!--
+  Generated template for the CheckoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>結帳清單</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<ion-item-group>
+		<ion-list-header color="light">勸募列表</ion-list-header>
+		<ion-list>
+			<ion-item>會員: {{'{'}}曾福氣{{'}'}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 總金額: 3,000元</ion-item>
+			<button ion-item *ngFor="let site of sites">
+				<ion-grid>
+					<ion-row>
+						<ion-col>
+							收據抬頭:{{'{'}}曾福氣{{'}'}}闔家
+						</ion-col>
+						<ion-col>
+							募款日期:{{'{'}}2017/12/21{{'}'}}
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>
+							募款金額: 1,000
+						</ion-col>
+						<ion-col>
+							更新日期: 2017/12/27
+						</ion-col>				        		
+					</ion-row>
+				</ion-grid>
+			</button>
+		</ion-list>
+		<ion-list>
+			<ion-item>會員: {{'{'}}曾上進{{'}'}} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 總金額: 3,000元</ion-item>
+			<button ion-item *ngFor="let site of sites">
+				<ion-grid>
+					<ion-row>
+						<ion-col>
+							收據抬頭:{{'{'}}曾上進{{'}'}}闔家
+						</ion-col>
+						<ion-col>
+							募款日期:{{'{'}}2017/12/21{{'}'}}
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>
+							募款金額: 1,000
+						</ion-col>
+						<ion-col>
+							更新日期: 2017/12/27
+						</ion-col>				        		
+					</ion-row>
+				</ion-grid>
+			</button>
+		</ion-list>
+		<div padding>
+			<ion-label class="settopline" text-center>總共{{'{'}}4{{'}'}}筆, 金額合計: 13,800元</ion-label>
+		</div>
+	</ion-item-group>
+	<ion-item-group>
+		<ion-list-header color="light">繳款資訊</ion-list-header>
+		<ion-item>
+			<ion-label stacked>繳款方式*</ion-label>
+			<ion-select [(ngModel)]="selectedMethod" #getItem="ngModel" (ngModelChange)="selectMethod()">
+				<ion-option *ngFor="let paymentMethod of paymentMethodList" [value]="paymentMethod">{{paymentMethod}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<!-- <pre>{{getItem.value}}</pre> -->
+		<ion-item *ngIf="getItem.value == '匯款'">
+			<ion-label stacked>銀行*</ion-label>
+			<!-- <ion-input type="text" name="memberName" ngModel required></ion-input> -->
+			<ion-select [(ngModel)]="selectedBank" (ngModelChange)="selectBank()">
+				<ion-option *ngFor="let bank of bankList" [value]="bank">{{bank}}</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-item-group>
+	<div class="setcontentbottom">
+	</div>
+<!-- 	<button ion-button block type="submit" full class="setbuttom">結帳</button> -->
+</ion-content>
+
+
+<ion-footer>
+	<button ion-button block type="submit" full class="setbuttom">結帳</button>
+</ion-footer>

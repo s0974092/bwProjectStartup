@@ -1,14 +1,88 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+<!--     <ion-buttons start>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons> -->
+    <ion-title>首頁</ion-title>
+<!--     <ion-buttons end>
+      <button ion-button icon-only color="royal">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="bgcontent">
+  	<ion-slides pager autoplay="5000" loop="true" speed="3000" style="height: 123.64px;">
+	    <ion-slide *ngFor="let slide of slideData">
+	      <img src="{{slide.image}}" />
+	    </ion-slide>
+  	</ion-slides>
+	<div class="sperateLine"></div>
+	<div padding>
+		<ion-segment [(ngModel)]="noticeList">
+	      <ion-segment-button value="toDoLists">
+	        待辦事項
+	      </ion-segment-button>
+	      <ion-segment-button value="notifyLists">
+	        通知
+	      </ion-segment-button>
+	  	</ion-segment>
+
+	  	<div [ngSwitch]="noticeList">
+	  		<ion-list *ngSwitchCase="'toDoLists'">
+	  			<ion-item-group>
+	  				<ion-list-header color="light">待匯款與回報</ion-list-header>
+	  				<ion-item>
+				  		<ion-checkbox color="dark" checked="true" item-start></ion-checkbox>
+				  		<button ion-item item-end>
+			  				<ion-label item-content>
+						      <h5>金額:{{'{'}}13,800{{'}'}}元</h5>
+						      <p>繳費有效期限:{{'{'}}2017/12/25{{'}'}}</p>
+						      <h6>更新日期:2017/12/22</h6>
+						    </ion-label>
+						</button>
+	  				</ion-item>
+	  			</ion-item-group>
+	  			<ion-item-group>
+	  				<ion-list-header color="light">待領回的收據</ion-list-header>
+		  			<ion-item>
+		  				<ion-checkbox color="dark" checked="true" item-start></ion-checkbox>
+				  		<ion-label text-wrap padding-left>回報單號:{{'{'}}R20171227001{{'}'}} <br> 需至{{'{'}}北區.傳一{{'}'}}領取
+				  		</ion-label>
+	  				</ion-item>
+	  			</ion-item-group>
+	  			<ion-item-group>
+	  				<ion-list-header color="light">待親送的收據</ion-list-header>
+		  			<ion-item>
+		  				<ion-checkbox [(ngModel)]="checkboxValue" (ionChange)="checkFunc()" color="dark" item-start></ion-checkbox>
+
+		  				<ion-label text-wrap padding-left>會員:{{'{'}}曾福氣{{'}'}} &emsp;&emsp; 總金額:3,000元 <br> 電話:{{'{'}}092345678{{'}'}} 共有{{'{'}}3{{'}'}}筆收據
+			  			</ion-label>
+		  				
+		  				<ion-icon *ngIf="checkboxValue == true" item-end ios="ios-trash" md="md-trash" (click)="clearInputText()"></ion-icon>
+	  				</ion-item>
+	  				<ion-item>
+			  			<ion-label text-wrap padding-left>會員:{{'{'}}曾上進{{'}'}} &nbsp; 總金額:10,800元 <br> 電話:{{'{'}}092345678{{'}'}} 共有{{'{'}}3{{'}'}}筆收據
+			  			</ion-label>
+		  				<ion-checkbox color="dark" checked="true" item-start></ion-checkbox>
+	  				</ion-item>
+	  			</ion-item-group>
+	  		</ion-list>
+	  		<ion-list *ngSwitchCase="'notifyLists'">
+				<ion-item-group>
+	  				<ion-list-header color="light">總部回覆</ion-list-header>
+		  			<ion-item>
+		  				<button ion-item item-end>
+					      <h5>回報單號:{{'{'}}R20171227001{{'}'}}</h5>
+					      <p>金額總計:13,800元     狀態: 已完成</p>
+					      <h6>更新日期:2017/12/25</h6>
+						</button>
+	  				</ion-item>
+	  			</ion-item-group>
+	  		</ion-list>
+		</div>
+  	</div>
 </ion-content>

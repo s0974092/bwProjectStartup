@@ -1,0 +1,37 @@
+page-checkout {
+	.item-block {
+    	min-height: 0rem;
+	}
+
+	button.item.item-block.item-ios {
+		padding-left: 0px;
+		margin-left: 20px;
+		width: 310px;
+	}
+	
+	.col {
+		padding: 0;
+	}
+
+	.item-inner {
+		padding-right: 8px !important;
+		width: 312px !important;
+	}
+
+	ion-item.item.item-block.item-ios.ng-tns-c0-0.ng-star-inserted {
+    	width: 300px;
+	}
+	// 主要去除 list間的上下margin
+	.list.list-ios {
+		margin: 0;
+	}
+
+	.list-ios > .item-block:last-child {
+    	border-bottom: none;
+	}
+
+	.settopline {
+		border-top: 1px solid;
+	}
+
+}
