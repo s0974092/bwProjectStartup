@@ -46,7 +46,7 @@ export class MemberPage {
 
 
   search(){
-    console.log('searchQuery: ' + this.searchQuery);
+    console.log('searchQuery:  ' + this.searchQuery);
     if(this.searchQuery === ''){
       console.log('this.queryText 空白');
       this.members = this.memberService.getMembers();
