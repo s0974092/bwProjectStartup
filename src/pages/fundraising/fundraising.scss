@@ -19,16 +19,27 @@ page-fundraising {
 	}
 
 	.item.item-block.item-ios.ng-tns-c0-0.ng-star-inserted {
-		padding-left: 8px;
+		// padding-left: 8px;
 	}
 
 	.item-inner {
-		padding-right: 8px !important;
-		width: 300px !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		width: 325px !important;
+	}
+
+	button.item.item-block.item-ios.ng-tns-c0-0.ng-star-inserted {
+    	// width: 343px;
+    	padding-left: 0 !important;
 	}
 
 	ion-item.item.item-block.item-ios.ng-tns-c0-0.ng-star-inserted {
-    	width: 343px;
+    	// width: 343px;
+    	padding-left: 20px !important;
+	}
+
+	ion-label.label.label-ios.ng-star-inserted {
+    	margin-right: 0px;
 	}
   //   .item.item-block.item-ios {
 		// border-left: 1px solid black;
