@@ -8,7 +8,7 @@ import { NavController, NavParams, ToastController } from 'ionic-angular';
 export class HomePage {
   noticeList: string = "toDoLists";	
   checkboxValue: boolean;
-  slideData = [{ image: "../assets/imgs/cover_1.jpg" },{ image: "../assets/imgs/cover_2.jpg" },{ image: "../assets/imgs/cover_3.jpg" }]
+  slideData = [{ image: "assets/imgs/cover_1.jpg" },{ image: "assets/imgs/cover_2.jpg" },{ image: "assets/imgs/cover_3.jpg" }]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
