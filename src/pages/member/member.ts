@@ -18,7 +18,8 @@ import { MemberService } from '../../services/member.service';
   templateUrl: 'member.html',
 })
 export class MemberPage {
-	private members: Member[] = [];
+  private members: Member[] = [];
+  public searchQuery: String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private memberService: MemberService) {
   }
@@ -28,7 +29,8 @@ export class MemberPage {
   }
 
   ionViewWillEnter() {
-  	this.members = this.memberService.getMembers();
+    this.searchQuery = '';
+    this.search();
     console.log('this.members: ' + JSON.stringify(this.members.slice()));
   }
 
@@ -42,4 +44,15 @@ export class MemberPage {
     this.navCtrl.push(MemberProfilePage, getMember);
   }
 
+
+  search(){
+    console.log('searchQuery: ' + this.searchQuery);
+    if(this.searchQuery === ''){
+      console.log('this.queryText 空白');
+      this.members = this.memberService.getMembers();
+    }else{
+      console.log('this.queryText no 空白'); 
+      this.members = this.memberService.getSearchMembers(this.searchQuery);
+    }
+  }
 }

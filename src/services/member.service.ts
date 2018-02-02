@@ -28,4 +28,15 @@ export class MemberService {
 		this.members.splice(removeIndex,1);
 		console.log('this.members test: ' + JSON.stringify(this.members));
 	}
+
+	getSearchMembers(queryText: String){
+		let tempMembers: Member[] = [];
+		this.members.filter(function(item, index, array){
+			if(item.name == queryText)
+				tempMembers.push(item)
+		});
+		
+		console.log('getSearchMembers this.members: ' + JSON.stringify(tempMembers.slice()));
+		return tempMembers
+	}
 }

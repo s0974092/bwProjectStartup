@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content class="bgcontent">
-	<ion-searchbar animated="true" placeholder="輸入姓名/電話搜尋會員"></ion-searchbar>
+	<ion-searchbar animated="true" placeholder="輸入姓名/電話搜尋會員" [(ngModel)]="searchQuery" (ionInput)="search($event)"></ion-searchbar>
 	<ion-item-group>
 		<ion-list-header color="light" no-lines>會員列表</ion-list-header>
 		<ion-item *ngFor="let member of members">
