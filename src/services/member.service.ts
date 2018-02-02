@@ -7,6 +7,8 @@ export class MemberService {
 
 	addMember(member: Member) {
 		member.id = this.id++;
+		if(!member.updateDate)
+			member.updateDate = new Date()
 		this.members.push(member);
 	}
 
@@ -22,11 +24,13 @@ export class MemberService {
 		// 找出要移除的member
 		let removeIndex = this.members.map(item => item.id).indexOf(member.id);
 		// push修改過的member
-		this.members.push(member);
+		this.members[removeIndex] = member
+		
+		// this.members.push(member);
 		console.log('this.members before splice: ' + JSON.stringify(this.members));
 		// 移除前一個版本的member
-		this.members.splice(removeIndex,1);
-		console.log('this.members test: ' + JSON.stringify(this.members));
+		// this.members.splice(removeIndex,1);
+		// console.log('this.members test: ' + JSON.stringify(this.members));
 	}
 
 	getSearchMembers(queryText: String){
