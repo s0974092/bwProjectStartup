@@ -25,6 +25,7 @@ export class MemberPage {
   }
 
   ionViewDidLoad() {
+    this.setInVaileData();
     console.log('ionViewDidLoad MemberPage');
   }
 
@@ -54,5 +55,36 @@ export class MemberPage {
       console.log('this.queryText no 空白'); 
       this.members = this.memberService.getSearchMembers(this.searchQuery);
     }
+  }
+
+  setInVaileData(){
+    let v1: Member = {
+      id:0,
+      name: 'Mary',
+      idCard: 'A123456789',
+      idCardLast4: '9876',
+      cellPhoneNumber: '0987654321',
+      homeNumber: '',
+      email: '',
+      memberType: '',
+      notifyType: '',
+      address: '',
+      updateDate: new Date('2018-01-12T00:00:00')
+    };
+    this.memberService.addMember(v1);
+    let v2: Member = {
+      id:0,
+      name: 'Mark',
+      idCard: 'A123456789',
+      idCardLast4: '9876',
+      cellPhoneNumber: '0987654321',
+      homeNumber: '',
+      email: '',
+      memberType: '',
+      notifyType: '',
+      address: '',
+      updateDate: new Date('2018-01-20T00:00:00')
+    };
+    this.memberService.addMember(v2);
   }
 }

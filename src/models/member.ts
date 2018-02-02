@@ -9,4 +9,5 @@ export class Member {
   memberType: string;
   notifyType: string;
   address?: string;
+  updateDate: Date;
 }
