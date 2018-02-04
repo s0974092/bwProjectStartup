@@ -12,8 +12,12 @@ import { HomePage } from '../pages/home/home';
 import { MemberPage } from '../pages/member/member';
 import { AddMemberPage } from '../pages/add-member/add-member';
 import { MemberProfilePage } from '../pages/member-profile/member-profile';
-import { PopoverContentPage } from '../pages/popover-content/popover-content';
 
+import { FamilyDependentPage } from '../pages/family-dependent/family-dependent';
+import { AddFamilyDependentPage } from '../pages/add-family-dependent/add-family-dependent';
+import { FamilyDependentProfilePage } from '../pages/family-dependent-profile/family-dependent-profile'
+
+import { PopoverContentPage } from '../pages/popover-content/popover-content';
 
 import { FundraisingPage } from '../pages/fundraising/fundraising';
 import { CheckoutPage } from '../pages/checkout/checkout';
@@ -23,6 +27,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { MemberService } from '../services/member.service';
+import { FamilyDependentService } from '../services/family-dependent.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,10 @@ import { MemberService } from '../services/member.service';
     TabsPage,
     AddMemberPage,
     MemberProfilePage,
-    PopoverContentPage
+    PopoverContentPage,
+    FamilyDependentPage,
+    AddFamilyDependentPage,
+    FamilyDependentProfilePage
   ],
   imports: [
     BrowserModule,
@@ -53,13 +61,17 @@ import { MemberService } from '../services/member.service';
     TabsPage,
     AddMemberPage,
     MemberProfilePage,
-    PopoverContentPage
+    PopoverContentPage,
+    FamilyDependentPage,
+    AddFamilyDependentPage,
+    FamilyDependentProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MemberService
+    MemberService,
+    FamilyDependentService
   ]
 })
 export class AppModule {}

@@ -60,7 +60,7 @@ export class MemberPage {
   setInVaileData(){
     let v1: Member = {
       id:0,
-      name: 'Mary',
+      name: '曾福氣',
       idCard: 'A123456789',
       idCardLast4: '9876',
       cellPhoneNumber: '0987654321',
@@ -74,7 +74,7 @@ export class MemberPage {
     this.memberService.addMember(v1);
     let v2: Member = {
       id:0,
-      name: 'Mark',
+      name: '郝慈悲',
       idCard: 'A123456789',
       idCardLast4: '9876',
       cellPhoneNumber: '0987654321',

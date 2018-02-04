@@ -12,54 +12,54 @@
 
 
 <ion-content>
-	<form (ngSubmit)="onAddMember(f.value)" #f="ngForm">
-		<ion-list-header color="light">基本資料</ion-list-header>
-		<ion-item>
-			<ion-label stacked>姓名*</ion-label>
-			<ion-input type="text" name="name" ngModel required></ion-input>
-		</ion-item>
-    <ion-item>
-      <ion-label stacked>身分證全碼*</ion-label>
-      <ion-input type="text" name="idCard" ngModel required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>身分證後四碼*</ion-label>
-      <ion-input type="text" name="idCardLast4" ngModel required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>行動電話</ion-label>
-      <ion-input type="text" name="cellPhoneNumber" ngModel required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>住家電話</ion-label>
-      <ion-input type="text" name="homeNumber" ngModel required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>電子郵件</ion-label>
-      <ion-input type="text" name="email" ngModel required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>身份別*</ion-label>
-      <ion-select [(ngModel)]="selectedMemberType" (ngModelChange)="selectMemberType()" name="memberType">
-        <ion-option *ngFor="let memberType of memberTypeList" [value]="memberType">{{memberType}}</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>收款通知*</ion-label>
-      <ion-select [(ngModel)]="selectedNotifyType" (ngModelChange)="selectNotifyType()" name="notifyType">
-        <ion-option *ngFor="let notifyType of memberNotifyList" [value]="notifyType">{{notifyType}}</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>地址</ion-label>
-      <ion-input type="text" name="address" ngModel required></ion-input>
-    </ion-item>
+	  <form (ngSubmit)="onAddMember(f.value)" #f="ngForm">
+  		<ion-list-header color="light">基本資料</ion-list-header>
+  		<ion-item>
+  			<ion-label stacked>姓名*</ion-label>
+  			<ion-input type="text" name="name" ngModel required></ion-input>
+  		</ion-item>
+      <ion-item>
+        <ion-label stacked>身分證全碼*</ion-label>
+        <ion-input type="text" name="idCard" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>身分證後四碼*</ion-label>
+        <ion-input type="text" name="idCardLast4" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>行動電話</ion-label>
+        <ion-input type="text" name="cellPhoneNumber" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>住家電話</ion-label>
+        <ion-input type="text" name="homeNumber" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>電子郵件</ion-label>
+        <ion-input type="text" name="email" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>身份別*</ion-label>
+        <ion-select [(ngModel)]="selectedMemberType" (ngModelChange)="selectMemberType()" name="memberType">
+          <ion-option *ngFor="let memberType of memberTypeList" [value]="memberType">{{memberType}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>收款通知*</ion-label>
+        <ion-select [(ngModel)]="selectedNotifyType" (ngModelChange)="selectNotifyType()" name="notifyType">
+          <ion-option *ngFor="let notifyType of memberNotifyList" [value]="notifyType">{{notifyType}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>地址</ion-label>
+        <ion-input type="text" name="address" ngModel required></ion-input>
+      </ion-item>
 
-    <button ion-button block type="submit" [disabled]="!f.valid" full class="setbuttom">新增</button>
-	</form>
+      <button ion-button block type="submit" [disabled]="!f.valid" full class="setbuttom">新增</button>
+  	</form>
 
-  <div class="setcontentbottom">
-  </div>
+    <div class="setcontentbottom">
+    </div>
 </ion-content>
 
 <!-- <ion-footer>
